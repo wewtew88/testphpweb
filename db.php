@@ -1,12 +1,13 @@
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "wow1";
+$host = getenv("MYSQLHOST");
+$port = getenv("MYSQLPORT");
+$dbname = getenv("MYSQLDATABASE");
+$username = getenv("MYSQLUSER");
+$password = getenv("MYSQLPASSWORD");
 
-$conn = mysqli_connect($host, $username, $password, $database);
+$conn = new mysqli($host, $username, $password, $dbname, $port);
 
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
 }
 ?>
