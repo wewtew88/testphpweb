@@ -1,7 +1,7 @@
 <?php
 $host = getenv("MYSQLHOST");
 $port = getenv("MYSQLPORT");
-$dbname = getenv("MYSQLDATABASE"); // ✅ FIXED
+$dbname = getenv("MYSQL_DATABASE"); // ✅ FIXED
 $username = getenv("MYSQLUSER");
 $password = getenv("MYSQLPASSWORD");
 
